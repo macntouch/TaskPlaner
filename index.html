@@ -1,0 +1,69 @@
+<!---
+ * Author: Madeleine Redl
+ * Date: 18 April 2013 -
+ * Descrition: WebApp for planning your tasks
+ --->
+
+<!DOCTYPE html>
+<html manifest="planer.appcache">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<title>Mobile Task Planer</title>
+		<link rel="apple-touch-icon" href="themes/images/bookmark-icon.png" />
+		<link rel="apple-touch-icon-precomposed" href="themes/images/bookmark-icon.png" /> 
+		<link rel="stylesheet" href="themes/myTheme.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="webapp.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+		<style type=text/css>
+		    .ui-li { 
+		      border-color : grey;
+		    }
+		    #content{
+		    	min-height: 500px;
+		    }
+    	</style>
+	</head>
+	<body>
+		<div id="page" data-role="page" data-theme="a">
+			<div data-role="header" data-position="inline">
+				<h1>Task Planer</h1>
+			</div>
+			
+			<div id="content" data-role="content" data-theme="a">
+			<p>
+		    	<a id="addBtn" href="#" data-role="button" data-icon="plus" data-inline="true">Neue Aufgabe</a>
+			
+				<div style="display:none" id="newTaskForm">
+					<label for="titel">Titel: </label>
+					<input id="titel" type="text" name="titel" value=""/>
+					<label for="beschreibung">Beschreibung: </label>
+					<textarea id="beschreibung" cols="40" rows="8" name="beschreibung" ></textarea>
+					<label for="duedate">fällig am: </label>
+					<input id="duedate" type="date" value="" />
+					<input id="newTaskBtn" type="button" value="Hinzufügen" data-inline="true" />
+					<input id="cancelNewTaskBtn" type="button" value="Abbrechen" data-inline="true" />
+				</div>
+			</p>
+			
+			<ul id="tasklist" data-role="listview" data-inset="true" data-theme="a">
+        	</ul>
+			</div>
+			
+			<div id="confirm" class="ui-content" data-role="popup" data-theme="a">
+		        <p id="question"></p>
+		        <div class="ui-grid-a">
+		            <div class="ui-block-a">
+		                <a id="yes" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Ok</a>
+		            </div>
+		            <div class="ui-block-b">
+		                <a id="cancel" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Abbrechen</a>
+		            </div>
+		        </div>
+    		</div><!-- /popup -->
+		</div>
+	</body>
+</html>
